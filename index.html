@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        input#name:invalid:focus{
+            border: 3px solid;
+        }
+        input#email:invalid:focus{
+            border: 3px solid;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="flex items-center justify-center h-screen">
+        <div class="container mx-auto my-10 p-10 bg-white shadow-lg rounded-lg">
+            <h1 class="text-5xl font-bold mb-7">Registration Form</h1>
+            <form id="registrationForm">
+                <div class="mb-5">
+                    <label for="name" class="block mb-1">Name</label>
+                    <input required type="text" id="name" name="name" required class="input-field" placeholder="Enter Full Name"><br>
+                  </div>
+                <div class="mb-7">
+                    <label for="email" class="block mb-1">Email</label>
+                    <input required type="email" id="email" name="email" required class="input-field" placeholder="Enter Email"><br>
+                </div>
+                <div class="mb-7">
+                    <label for="password" class="block mb-1">Password</label>
+                    <input type="password" id="password" name="password" required class="input-field" placeholder="Password"><br>
+                </div>
+                <div class="mb-7">
+                    <label for="dob" class="block mb-1">Date of Birth</label>
+                    <input type="date" id="dob" name="dob" required class="input-field" ><br>
+                </div>
+                <div class="mb-5">
+                    <input type="checkbox" id="acceptedTerms" name="acceptedTerms" required>
+                    <label for="acceptedTerms" class="ml-2">Accept Terms & Conditions</label><br>
+                </div>
+                <button type="submit" id="submit" class="submit-button">Submit</button><br>
+            </form>
+        </div>
+    </div>
+
+    <div class="container mx-auto my-15 p-15 bg-white shadow-lg rounded-lg">
+        <h2 class="text-2xl font-bold mb-5 mt-10">Registered Users</h2>
+      
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Password</th>
+              <th>dob</th>
+              <th>accepted terms?</th>
+            </tr>
+          </thead>
+          <tbody id="userTableBody"></tbody>
+        </table>
+      </div>
+      <script src="./index.js"></script>
+</body>
+</html>
